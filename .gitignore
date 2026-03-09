@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Allow only these files/folders
+!src/
+!src/**
+
+!pom.xml
+!.gitignore
+!README.md

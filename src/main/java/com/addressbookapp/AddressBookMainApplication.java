@@ -1,0 +1,14 @@
+package com.addressbookapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AddressBookMainApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AddressBookMainApplication.class, args);
+		System.out.println("Welcome to Address Book Program");
+	}
+
+}
