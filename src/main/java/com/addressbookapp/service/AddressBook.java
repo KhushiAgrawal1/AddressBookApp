@@ -60,7 +60,7 @@ public class AddressBook {
 	public void displayContacts() {
 
 		if (contactList.isEmpty())
-			System.out.println("No contacts available");
+			System.out.println("No contact available");
 		else
 			contactList.stream().forEach(System.out::println);
 	}

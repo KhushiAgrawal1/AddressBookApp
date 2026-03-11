@@ -137,7 +137,7 @@ public class AddressBookMainApplication {
 
 			case 5 -> {
 
-				System.out.print("Enter Address Book Name: ");
+				System.out.print("Enter AddressBook Name: ");
 				String bookName = scanner.nextLine();
 
 				AddressBook book = addressBookMap.get(bookName);
