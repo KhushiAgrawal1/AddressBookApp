@@ -48,7 +48,9 @@ public class AddressBookMainApplication {
 			System.out.println("16. Read Contacts from File");
 			System.out.println("17. Write Contacts to CSV");
 			System.out.println("18. Read Contacts from CSV");
-			System.out.println("19. Exit");
+			System.out.println("19. Write Contacts to JSON");
+			System.out.println("20. Read Contacts from JSON");
+			System.out.println("21. Exit");
 
 			System.out.print("Enter choice: ");
 			choice = scanner.nextInt();
@@ -276,12 +278,25 @@ public class AddressBookMainApplication {
 			    addressBookMap.values().forEach(book ->
 			            book.readContactsFromCSV());
 			}
-			case 19 -> System.out.println("Exiting Program");
+			
+			case 19 -> {
+
+			    addressBookMap.values().forEach(book ->
+			            book.writeContactsToJSON());
+			}
+
+			case 20 -> {
+
+			    addressBookMap.values().forEach(book ->
+			            book.readContactsFromJSON());
+			}
+			
+			case 21 -> System.out.println("Exiting Program");
 
 			default -> System.out.println("Invalid Choice");
 			}
 
-		} while (choice != 19);
+		} while (choice != 21);
 
 		scanner.close();
 	}
