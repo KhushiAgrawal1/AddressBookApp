@@ -61,7 +61,7 @@ public class AddressBookController {
                 person.setCity(updatedPerson.getCity());
                 person.setState(updatedPerson.getState());
 
-                return "Contact updated successfully";
+                return "Successfully added the contact";
             }
         }
 
