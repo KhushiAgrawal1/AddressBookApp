@@ -42,6 +42,6 @@ public class AddressBookController {
 
         addressBook.addContact(person);
 
-        return "Contact added successfully";
+        return "Successfully added the contact";
     }
 }
