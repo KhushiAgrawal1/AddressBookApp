@@ -3,7 +3,9 @@ package com.addressbookapp.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +44,27 @@ public class AddressBookController {
 
         addressBook.addContact(person);
 
-        return "Successfully added the contact";
+        return "Contact added successfully";
+    }
+    
+ // Update contact
+    @PutMapping("/{name}")
+    public String updateContact(@PathVariable String name, @RequestBody Person updatedPerson) {
+
+        List<Person> contacts = addressBook.getContacts();
+
+        for (Person person : contacts) {
+
+            if (person.getFirstName().equalsIgnoreCase(name)) {
+
+                person.setAddress(updatedPerson.getAddress());
+                person.setCity(updatedPerson.getCity());
+                person.setState(updatedPerson.getState());
+
+                return "Contact updated successfully";
+            }
+        }
+
+        return "Contact not found";
     }
 }
